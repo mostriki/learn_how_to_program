@@ -1,0 +1,17 @@
+<h1><%= @course.title %></h1>
+
+<% if @course.sections.any? %>
+  <h4>Here are the sections for this course:</h4>
+
+  <ul>
+    <% @course.sections.each do |section| %>
+      <li>
+        (<%= section.week %>) <%= link_to section.title, section_path %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no sections yet!</p>
+<% end %>
+
+<p><%= link_to "Return to courses", courses_path %></p>
