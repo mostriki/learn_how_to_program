@@ -1,0 +1,13 @@
+<%= form_for @lesson do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <% day = ['Weekend', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'] %>
+  <%= f.select :day,  day %>
+  <% lessonType = ['Homework', 'Lesson'] %>
+  <%= f.select :lesson_type,  lessonType %>
+  <% options = options_from_collection_for_select(@section, 'id', 'title') %>
+  <%= f.select :section_id,  options %>
+  <%= f.submit %>
+<% end %>

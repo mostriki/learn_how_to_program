@@ -6,7 +6,11 @@
   <ul>
     <% @course.sections.each do |section| %>
       <li>
-        (<%= section.week %>) <%= link_to section.title, section_path %>
+        (<%= section.week %>) <%= link_to section.title, section_path(section) %>
+        <%= link_to "Edit", edit_section_path(section) %> /
+        <%= link_to "Delete", section_path(section),
+                               :data => {:confirm => "Are you sure?",
+                                              :method => "delete"} %>
       </li>
     <% end %>
   </ul>

@@ -7,7 +7,11 @@
   <ul>
     <% @section.lessons.each do |lesson| %>
       <li>
-        (<%= lesson.day %>) <%= link_to lesson.title, lesson_path %>
+        (<%= lesson.day %>) <%= link_to lesson.title, lesson_path(lesson) %> /
+        <%= link_to "Edit", edit_lesson_path(lesson) %> /
+        <%= link_to "Delete", lesson_path(lesson),
+                               :data => {:confirm => "Are you sure?",
+                                              :method => "delete"} %>
       </li>
     <% end %>
   </ul>

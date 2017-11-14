@@ -1,0 +1,9 @@
+<%= form_for @section do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <% weekOp = ['Pre-Work', 'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'] %>
+  <%= f.select :week,  weekOp %>
+  <% options = options_from_collection_for_select(@course, 'id', 'title') %>
+  <%= f.select :course_id,  options %>
+  <%= f.submit %>
+<% end %>
