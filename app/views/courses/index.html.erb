@@ -1,10 +1,11 @@
 <h1>Courses</h1>
-
-<ul>
+<ul class="list-unstyled">
   <% @courses.each do |course| %>
     <li>
-      <%= link_to course.title, course_path(course) %> /
-      <%= link_to "Edit", edit_course_path(course) %> /
+      <span class="redTitle">
+        <%= link_to course.title, course_path(course) %>
+      </span>
+       / <%= link_to "Edit", edit_course_path(course) %> /
       <%= link_to "Delete", course_path(course),
                              :data => {:confirm => "Are you sure?",
                                             :method => "delete"} %>
@@ -12,4 +13,4 @@
   <% end %>
 </ul>
 
-<p><%= link_to "Add Course", new_course_path(@course) %></p>
+<p>© 2017 <span class="redTitle"><%= link_to "Rikidavus", new_course_path(@course) %></span>, Inc.</p>

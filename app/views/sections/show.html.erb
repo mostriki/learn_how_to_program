@@ -18,3 +18,5 @@
 <% else %>
   <p>There are no sections yet!</p>
 <% end %>
+
+<p><%= link_to @course.title, course_path(@course.id) %></p>

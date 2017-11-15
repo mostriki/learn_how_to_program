@@ -1,12 +1,14 @@
 <h1><%= @course.title %></h1>
-
+<hr>
 <% if @course.sections.any? %>
-  <h4>Here are the sections for this course:</h4>
-
-  <ul>
+  <ul class="list-unstyled">
     <% @course.sections.each do |section| %>
       <li>
-        (<%= section.week %>) <%= link_to section.title, section_path(section) %>
+        (<%= section.week %>)
+        <span class="redTitle">
+          <%= link_to section.title, section_path(section) %>
+        </span>
+
         <%= link_to "Edit", edit_section_path(section) %> /
         <%= link_to "Delete", section_path(section),
                                :data => {:confirm => "Are you sure?",
@@ -18,4 +20,4 @@
   <p>There are no sections yet!</p>
 <% end %>
 
-<p><%= link_to "Return to courses", courses_path %></p>
+<p class="redTitle"><%= link_to "Return to courses", courses_path %></p>

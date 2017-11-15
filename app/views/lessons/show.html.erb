@@ -2,3 +2,5 @@
 <h2><%= @section.title %></h2>
 <h3><%= @lesson.title %></h3>
 <p><%= @lesson.content %></p>
+
+<p><%= link_to @section.title, section_path(@section.id) %></p>
